@@ -20,11 +20,16 @@ export class CarListComponent {
   cars$!:Observable<Car[]>;
   searchCar:string='';
   constructor(private carService: CarService){
-
+    console.log('ciclo de vida consturctor carListComponent');
   }
 
   ngOnInit(){
+    console.log('ciclo de vida ngOnInit carListComponent');
     this.getCars();
+  }
+
+  ngOndestroy(){
+    console.log('ciclo de vida ngOnDestroy carListComponent');
   }
 
   getCars(){
