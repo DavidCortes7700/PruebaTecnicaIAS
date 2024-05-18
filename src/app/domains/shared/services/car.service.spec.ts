@@ -16,4 +16,9 @@ describe('CarService', () => {
   it('should be created', () => {
     expect(service).toBeTruthy();
   });
+
+  it('#fetchCars trae datos de getCars',(done:DoneFn)=>{
+    expect(service.getCars());
+    done();
+  })
 });
