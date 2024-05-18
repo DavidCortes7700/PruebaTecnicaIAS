@@ -1,0 +1,15 @@
+<div class="container-search" carDirective>
+  <input class="search" type="text" placeholder="Buscar por marca" [(ngModel)]="searchCar">
+</div>
+<div class="container">
+  <ng-container *ngIf="cars$ |async as cars;else noItems">
+    <div *ngFor="let car of cars |carPipe:searchCar">
+      <app-car class="item" [car]="car"></app-car>
+    </div>
+  </ng-container>
+</div>
+<ng-template #noItems>
+  <div class="message">
+    <span class="noElements">No hay elementos para mostrar</span>
+  </div>
+</ng-template>

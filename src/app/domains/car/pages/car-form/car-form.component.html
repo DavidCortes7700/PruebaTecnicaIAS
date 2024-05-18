@@ -1,0 +1,32 @@
+<div class="container">
+  <form [formGroup]="carFom" (ngSubmit)="addCar()">
+  <div class="item">
+    <label for="make">Marca:</label>
+    <input type="text" formControlName="make">
+    <span *ngIf="this.carFom.get('make')?.hasError('required') && this.carFom.get('make')?.touched">El campo es requerido</span>
+  </div>
+  <div class="item">
+    <label for="model">Modelo:</label>
+    <input type="text" formControlName="model">
+    <span *ngIf="this.carFom.get('model')?.hasError('required') && this.carFom.get('model')?.touched">El campo es requerido</span>
+  </div>
+  <div class="item">
+    <label for="year">Año:</label>
+    <input type="text" formControlName="year">
+    <span *ngIf="this.carFom.get('year')?.hasError('required') && this.carFom.get('year')?.touched">El campo es requerido</span>
+    <span *ngIf="this.carFom.get('year')?.hasError('pattern') && this.carFom.get('year')?.touched">El campo debe ser numerico con formato YYYY</span>
+  </div>
+  <div class="item">
+    <label for="price">Precio:</label>
+    <input type="text" formControlName="price">
+    <span *ngIf="this.carFom.get('price')?.hasError('required') && this.carFom.get('price')?.touched">El campo es requerido</span>
+    <span *ngIf="this.carFom.get('price')?.hasError('pattern') && this.carFom.get('price')?.touched">El campo debe ser numerico</span>
+  </div>
+  <div class="message">
+    <span *ngIf="messageSucces">Se ha agregado correctamente</span>
+  </div>
+  <div class="button-add">
+    <button type="submit" [disabled]="!carFom.valid">Agregar</button>
+  </div>
+  </form>
+</div>

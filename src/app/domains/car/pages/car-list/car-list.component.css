@@ -1,0 +1,38 @@
+.container{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap:10px;
+  padding: 10px;
+}
+
+.item{
+  padding: 10px;
+}
+
+.container-search{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.container-search .search{
+  padding: 10px;
+  border: solid 1px #ccc;
+  border-radius: 20px;
+  width: 50%;
+}
+
+.message{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.message .noElements{
+  padding: 20px;
+  border: solid 1px #ccc;
+  border-radius: 10px;
+  font-size: 18px;
+}
